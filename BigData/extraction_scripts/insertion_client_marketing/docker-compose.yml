@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  cassandra-db:
+    image: cassandra:latest
+    container_name: cassandra-container
+    ports:
+      - "9042:9042"
+    networks:
+      - cassandra-network
+    environment:
+      - CASSANDRA_START_RPC=true
+    volumes:
+      - cassandra_data:/var/lib/cassandra
+
+  python-app:
+    image: python:3.9-slim
+    container_name: python-app-m
+    networks:
+      - cassandra-network
+  
+networks:
+  cassandra-network:
+    driver: bridge
+
+volumes:
+  cassandra_data:

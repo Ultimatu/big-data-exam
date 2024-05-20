@@ -1,0 +1,28 @@
+# docker run -it --network mongo-net  --name mongo-db mongo:latest 
+# docker run -it --network mongo-net --name python-app-ci python:3.9-slim
+
+version: '3.8'
+
+services:
+  mongo-db:
+    image: mongo:latest
+    container_name: mongo-db
+    ports:
+      - "27017:27017"
+    networks:
+      - mongo-net
+    volumes:
+      - mongo_data:/data/db
+
+  python-app-ci:
+    image: python:3.9-slim
+    container_name: python-app-ci
+    networks:
+      - mongo-net 
+
+networks:
+  mongo-net:
+    driver: bridge
+
+volumes:
+  mongo_data:

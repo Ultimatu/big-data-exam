@@ -24,19 +24,6 @@ Ouvrez le fichier, dans la fonction `main()`:
 
 ## Utilisation du script `split_immatriculation.py`
 
-<!-- import pandas as pd
-
-# Read the CSV file with explicit encoding
-immatriculation = pd.read_csv("/home/tonde/Bureau/bigdataExam/Data_extraction/datas/Immatriculations.csv", header=1, sep=",", decimal=".", encoding="ISO-8859-1")
-
-# Split the dataframe into two parts
-immatriculation1 = immatriculation.iloc[:1000000]
-immatriculation2 = immatriculation.iloc[1000000:2000000]
-
-# Write each part to separate CSV files
-immatriculation1.to_csv('/home/tonde/Bureau/bigdataExam/Data_extraction/datas/Immatriculations1.csv', index=False, quoting=False, encoding="ISO-8859-1")
-immatriculation2.to_csv('/home/tonde/Bureau/bigdataExam/Data_extraction/datas/Immatriculations2.csv', index=False, quoting=False, encoding="ISO-8859-1") -->
-
 Ouvrez le fichier
 - Modifiez les variables `immatriculation_file`, `immatriculation1_csv` et `immatriculation2_csv` pour correspondre à l'emplacement du fichier brut, l'emplacement du fichier corrigé et le nom de la colonne ID respectivement.
 
@@ -48,4 +35,4 @@ Ouvrez le fichier
 
 ## Suite
 
-- Nous allons inserer les données de client et Marketing dans la base de données  cassandra. Cela se fera dans le dossier java8.
+- Nous allons inserer les données de client et Marketing dans la base de données  cassandra. Cela se fera dans le dossier insertion_marketing
